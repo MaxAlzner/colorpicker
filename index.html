@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Color Picker</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+        <style type="text/css">
+        .container-fluid
+        {
+            width: 800px;
+        }
+        .container-fluid .row
+        {
+            margin-bottom: 1em;
+        }
+        .container-fluid .row:last-child
+        {
+            margin-bottom: 0;
+        }
+        .panel
+        {
+            background-color: #F8F8FF;
+            border-color: #CCCCFF;
+        }
+        .input-group
+        {
+            width: 100%;
+        }
+        .form-control
+        {
+        }
+        .color-name-label
+        {
+            width: 50%;
+            text-align: right;
+        }
+        .color-label
+        {
+            width: 50%;
+        }
+        .color-component-list li
+        {
+            margin-bottom: 1em;
+        }
+        .color-component-list li:last-child
+        {
+            margin-bottom: 0;
+        }
+        #ShadePickerGradient, #HuePickerGradient
+        {
+            background-color: White;
+            margin: 0;
+            cursor: pointer;
+        }
+        #ShadePickerCursor, #HuePickerCursor
+        {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            cursor: pointer;
+        }
+        #ShadePickerCursor
+        {
+            
+        }
+        #HuePickerCursor
+        {
+            
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <h1>Color Picker</h1>
+            <div class="panel panel-body">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="input-group">
+                            <label class="input-group-addon">
+                                HEX Value</label>
+                            <input id="HexValueInput" type="text" class="form-control" value="#000000" placeholder="#FFFFFF" maxlength="7" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <canvas id="ShadePickerGradient" class="panel" width="354px" height="360px">
+                        </canvas>
+                    </div>
+                    <div class="col-xs-1">
+                        <canvas id="HuePickerGradient" class="panel" width="32px" height="360px">
+                        </canvas>
+                    </div>
+                    <div class="col-xs-5">
+                        <ol class="list-unstyled color-component-list">
+                            <li>
+                                <div class="input-group">
+                                    <label class="input-group-addon color-name-label">
+                                        Red</label>
+                                    <input id="RedValueInput" type="text" class="form-control color-label" value="0" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="input-group">
+                                    <label class="input-group-addon color-name-label">
+                                        Green</label>
+                                    <input id="GreenValueInput" type="text" class="form-control color-label" value="0" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="input-group">
+                                    <label class="input-group-addon color-name-label">
+                                        Blue</label>
+                                    <input id="BlueValueInput" type="text" class="form-control color-label" value="0" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="input-group">
+                                    <label class="input-group-addon color-name-label">
+                                        Hue</label>
+                                    <input id="HueValueInput" type="text" class="form-control color-label" value="0" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="input-group">
+                                    <label class="input-group-addon color-name-label">
+                                        Saturation</label>
+                                    <input id="SaturationValueInput" type="text" class="form-control color-label" value="0" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="input-group">
+                                    <label class="input-group-addon color-name-label">
+                                        Lightness</label>
+                                    <input id="LightnessValueInput" type="text" class="form-control color-label" value="0" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="input-group">
+                                    <label class="input-group-addon color-name-label">
+                                        Gray</label>
+                                    <!--<input id="GrayValueInput" type="text" class="form-control color-label" value="0" />-->
+                                    <label id="GrayValueLabel" class="form-control color-label"></label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="input-group">
+                                    <label class="input-group-addon color-name-label">
+                                        Color</label>
+                                    <label id="ColorViewLabel" class="form-control col-xs-6"></label>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div id="ShadePickerCursor">
+                <i class="glyphicon glyphicon-map-marker" style="position: relative; width: 12px; height: 12px; top: -6px;"></i>
+            </div>
+            <div id="HuePickerCursor" style="width: 32px; height: 1px; background-color: #000;">
+                <!--<i class="glyphicon glyphicon-chevron-right left" style="position: relative; width: 12px; height: 12px; left: -14px;"></i>-->
+                <!--<i class="glyphicon glyphicon-chevron-left right" style="position: relative; width: 12px; height: 12px; right: -13px;"></i>-->
+            </div>
+        </div>
+        <div hidden>
+            <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+            <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="ColorPicker.js"></script>
+        </div>
+    </body>
+</html>
